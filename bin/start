@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+from os import path
+import sys
+
+current_dir = path.dirname(path.realpath(__file__))
+app_path = path.abspath(path.join(current_dir, '..'))
+sys.path.append(app_path)
+
+from app import api
+
+api.run(debug=True)
