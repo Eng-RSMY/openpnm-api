@@ -1,1 +1,2 @@
-from . import ordinary_percolation
+from .simulation import Simulation
+from .ordinary_percolation import OrdinaryPercolation
