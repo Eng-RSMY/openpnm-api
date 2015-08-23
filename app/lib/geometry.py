@@ -6,5 +6,6 @@ class Geometry(Input):
     'lx': 1,
     'ly': 1,
     'lz': 1,
-    'poreDiameter': 'weibull_min'
+    'poreDiameter': 'weibull',
+    'throatDiameter': 'weibull',
   }

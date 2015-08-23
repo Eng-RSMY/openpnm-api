@@ -58,7 +58,7 @@ class OrdinaryPercolation(Simulation):
       'pore_volumes': geometry['pore.volume'].tolist()
     }
 
-  def _transform_data(algorithm):
+  def _transform_data(self, algorithm):
     pore_invasion_pressures = sp.unique(algorithm['pore.inv_Pc'])
     invaded_volume_fraction = sp.zeros_like(pore_invasion_pressures)
     pores = algorithm._net.pores(labels='all')
@@ -126,14 +126,14 @@ class OrdinaryPercolation(Simulation):
       'tsd_shape': 1
     }
 
-    if self.geo['throatDiameter'] == 'normal':
+    if self.geo.throatDiameter == 'normal':
       model['tsd_name'] = 'norm'
       model['tsd_loc'] = 6.9e-7
-    elif self.geo['throatDiameter'] == 'random':
+    elif self.geo.throatDiameter == 'random':
       return
-    elif self.geo['throatDiameter'] == 'logNormal':
+    elif self.geo.throatDiameter == 'logNormal':
       return
-    elif self.geo['throatDiameter'] == 'weibull':
+    elif self.geo.throatDiameter == 'weibull':
       model['tsd_name'] = 'weibull_min'
       model['tsd_loc'] = 6.9e-7
 
